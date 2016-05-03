@@ -12,7 +12,7 @@
     <string name="welcome_button">Go!</string>
 
     <!--About-->
-    <string name="about_text">This app was implemented based on the vision of \n <b> Dr. Ramon Bonegio </b> \n \n By \n Nithya Konda, Lipsa Ray, Kun Mao and Quynh Vo \n University of Massachusetts, Boston \n Class of 2015 \n \n In liason with \n <a href= "http://www.lupus.org">The lupus foundation of America</a> \n <a href = "http://www.lupusne.org">The lupus foundation of New England</a>  </string>
+    <string name="about_text">This app was implemented based on the vision of \n <b> Dr. Ramon Bonegio </b> \n \n By \n Nithya Konda, Lipsa Ray, Kun Mao, Quynh Vo, Shalini Shanmugam and Preet Singh \n University of Massachusetts, Boston \n Class of 2015 \n \n In liason with \n <a href= "http://www.lupus.org">The lupus foundation of America</a> \n <a href = "http://www.lupusne.org">The lupus foundation of New England</a>  </string>
     <!-- SHARE DATA -->
     <string name="share_text">Do you like to share your health information with your doctor?It is recommended to share atleast once a month preferrably before the appointment</string>
 
