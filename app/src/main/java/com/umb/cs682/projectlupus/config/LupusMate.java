@@ -29,8 +29,10 @@ public class LupusMate extends Application{
 
     //Service Objects
     private static ProfileService profileService;
-    private static ActivitySenseService activitySenseService;
+    private static ActivitySenseService activitySenseService
+            ;
     private static HomeService homeService;
+
     private static MedicineService medicineService;
     private static MoodLevelService moodLevelService;
     private static ReminderService reminderService;

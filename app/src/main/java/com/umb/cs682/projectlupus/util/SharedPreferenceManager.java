@@ -4,8 +4,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Log;
 
-import com.umb.cs682.projectlupus.config.LupusMate;
-
 public class SharedPreferenceManager {
     private static String PREFS_FILE = "App_Prefs";
     private static SharedPreferences prefs;
@@ -20,7 +18,9 @@ public class SharedPreferenceManager {
         prefs = context.getSharedPreferences(PREFS_FILE, 0);
         SharedPreferences.Editor editor = prefs.edit();
         editor.remove(Constants.IS_FIRST_RUN);
+        editor.remove(Constants.DONE_SHARED_DATA);
         editor.putBoolean(Constants.ACTIVITY_SENSE_SETTING,false);
+        //editor.putBoolean(Constants.SHARE_DATA_SETTING,false);
         editor.commit();
     }
 

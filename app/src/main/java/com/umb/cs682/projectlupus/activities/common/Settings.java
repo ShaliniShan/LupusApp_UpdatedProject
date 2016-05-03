@@ -15,13 +15,13 @@ import android.preference.PreferenceCategory;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import android.preference.RingtonePreference;
+import android.support.v4.app.NavUtils;
 import android.text.TextUtils;
 import android.view.MenuItem;
-import android.support.v4.app.NavUtils;
-
-import java.util.List;
 
 import com.umb.cs682.projectlupus.R;
+
+import java.util.List;
 
 public class Settings extends PreferenceActivity {
 

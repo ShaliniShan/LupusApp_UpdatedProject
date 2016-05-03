@@ -1,22 +1,11 @@
 package com.umb.cs682.projectlupus.activities.moodAlert;
 
-import com.umb.cs682.projectlupus.R;
-import com.umb.cs682.projectlupus.activities.activitySense.ActivitySense;
-import com.umb.cs682.projectlupus.config.LupusMate;
-import com.umb.cs682.projectlupus.service.ReminderService;
-import com.umb.cs682.projectlupus.util.AlarmUtil;
-import com.umb.cs682.projectlupus.util.Constants;
-import com.umb.cs682.projectlupus.util.DateTimeUtil;
-import com.umb.cs682.projectlupus.util.SharedPreferenceManager;
-import com.umb.cs682.projectlupus.util.Utils;
-
 import android.app.ActionBar;
 import android.app.Activity;
 import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -29,6 +18,16 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.TimePicker;
+
+import com.umb.cs682.projectlupus.R;
+import com.umb.cs682.projectlupus.activities.activitySense.ActivitySense;
+import com.umb.cs682.projectlupus.config.LupusMate;
+import com.umb.cs682.projectlupus.service.ReminderService;
+import com.umb.cs682.projectlupus.util.AlarmUtil;
+import com.umb.cs682.projectlupus.util.Constants;
+import com.umb.cs682.projectlupus.util.DateTimeUtil;
+import com.umb.cs682.projectlupus.util.SharedPreferenceManager;
+import com.umb.cs682.projectlupus.util.Utils;
 
 import java.util.ArrayList;
 import java.util.Calendar;

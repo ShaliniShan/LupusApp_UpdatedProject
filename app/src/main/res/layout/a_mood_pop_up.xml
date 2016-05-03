@@ -68,7 +68,6 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:id="@+id/sp_mood_snooze_interval"
-            android:layout_gravity="center"
             android:backgroundTint="@color/darkPurple"/>
 
     </LinearLayout>

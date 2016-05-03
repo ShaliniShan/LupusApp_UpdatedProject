@@ -1,18 +1,19 @@
 package com.umb.cs682.projectlupus.db.dao;
 
-import java.util.List;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteStatement;
+
+import com.umb.cs682.projectlupus.db.helpers.DaoSession;
+import com.umb.cs682.projectlupus.domain.ReminderBO;
+
+import java.util.List;
 
 import de.greenrobot.dao.AbstractDao;
 import de.greenrobot.dao.Property;
 import de.greenrobot.dao.internal.DaoConfig;
 import de.greenrobot.dao.query.Query;
 import de.greenrobot.dao.query.QueryBuilder;
-
-import com.umb.cs682.projectlupus.domain.ReminderBO;
-import com.umb.cs682.projectlupus.db.helpers.DaoSession;
 
 public class ReminderDao extends AbstractDao<ReminderBO, Long> {
 
@@ -26,7 +27,7 @@ public class ReminderDao extends AbstractDao<ReminderBO, Long> {
         public final static Property ReminderDayOrDate = new Property(3, String.class, "reminderDayOrDate", false, "REMINDER_DAY_DATE");
         public final static Property ReminderTime = new Property(4, java.util.Date.class, "reminderTime", false, "REMINDER_TIME");
         public final static Property Status = new Property(5, String.class, "status", false, "STATUS");
-    };
+    }
 
     private DaoSession daoSession;
 

@@ -1,17 +1,11 @@
 package com.umb.cs682.projectlupus.alarms;
 
 import android.app.IntentService;
-import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
 import com.umb.cs682.projectlupus.config.LupusMate;
-import com.umb.cs682.projectlupus.db.dao.MedicineDao;
-import com.umb.cs682.projectlupus.db.dao.ReminderDao;
-import com.umb.cs682.projectlupus.db.helpers.DaoMaster;
-import com.umb.cs682.projectlupus.db.helpers.DaoSession;
 import com.umb.cs682.projectlupus.domain.MedicineBO;
 import com.umb.cs682.projectlupus.domain.ReminderBO;
 import com.umb.cs682.projectlupus.service.MedicineService;

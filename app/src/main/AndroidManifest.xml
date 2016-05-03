@@ -7,23 +7,29 @@
     <uses-sdk
         android:minSdkVersion="16"
         android:targetSdkVersion="21" />
-
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="com.andorid.alarm.permission.SET_ALARM" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="com.company.contentprovider.READ_DATABASE"/>
+    <uses-permission android:name="com.company.contentprovider.WRITE_DATABASE"/>
 
     <application
+        android:name=".config.LupusMate"
         android:icon="@drawable/logo"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme"
-        android:name=".config.LupusMate">
+        android:theme="@style/AppTheme" >
 
         <!-- SPLASH SCREEN -->
         <activity android:name=".activities.main.Splash" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -34,6 +40,7 @@
             android:label="@string/title_activity_welcome" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.default" />
             </intent-filter>
         </activity>
@@ -64,6 +71,11 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.umb.cs682.projectlupus.activities.main.Home" />
+        </activity>
+        <activity
+            android:name=".activities.common.Share_Data"
+            android:label="@string/title_activity_share_data"
+            android:configChanges="keyboardHidden|orientation|screenLayout">
         </activity>
 
         <!-- ACTIVITY SENSE -->
@@ -134,7 +146,12 @@
             android:name=".alarms.DeleteNotificationReceiver"
             android:enabled="true"
             android:exported="true" >
-        </receiver>
+        </receiver><!-- ATTENTION: This was auto-generated to add Google Play services to your project for
+     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
     </application>
 
 </manifest>

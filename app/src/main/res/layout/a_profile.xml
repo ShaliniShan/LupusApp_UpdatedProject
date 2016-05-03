@@ -25,9 +25,8 @@
         android:background="@drawable/panel_background"
         android:id="@+id/tableLayout"
         android:layout_centerVertical="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        >
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
 
         <TableRow
@@ -139,12 +138,6 @@
                     android:buttonTint="@color/darkPurple"
                     />
             </RadioGroup>
-
-        </TableRow>
-
-        <TableRow
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
 
         </TableRow>
 

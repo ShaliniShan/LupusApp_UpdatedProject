@@ -1,18 +1,5 @@
 package com.umb.cs682.projectlupus.activities.medicineAlert;
 
-import com.umb.cs682.projectlupus.R;
-import com.umb.cs682.projectlupus.activities.activitySense.ActivitySense;
-import com.umb.cs682.projectlupus.activities.main.Home;
-import com.umb.cs682.projectlupus.config.LupusMate;
-import com.umb.cs682.projectlupus.domain.ReminderBO;
-import com.umb.cs682.projectlupus.service.MedicineService;
-import com.umb.cs682.projectlupus.service.ReminderService;
-import com.umb.cs682.projectlupus.util.AlarmUtil;
-import com.umb.cs682.projectlupus.util.Constants;
-import com.umb.cs682.projectlupus.util.DateTimeUtil;
-import com.umb.cs682.projectlupus.util.SharedPreferenceManager;
-import com.umb.cs682.projectlupus.util.Utils;
-
 import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Context;
@@ -30,6 +17,19 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import com.umb.cs682.projectlupus.R;
+import com.umb.cs682.projectlupus.activities.activitySense.ActivitySense;
+import com.umb.cs682.projectlupus.activities.main.Home;
+import com.umb.cs682.projectlupus.config.LupusMate;
+import com.umb.cs682.projectlupus.domain.ReminderBO;
+import com.umb.cs682.projectlupus.service.MedicineService;
+import com.umb.cs682.projectlupus.service.ReminderService;
+import com.umb.cs682.projectlupus.util.AlarmUtil;
+import com.umb.cs682.projectlupus.util.Constants;
+import com.umb.cs682.projectlupus.util.DateTimeUtil;
+import com.umb.cs682.projectlupus.util.SharedPreferenceManager;
+import com.umb.cs682.projectlupus.util.Utils;
 
 import java.util.ArrayList;
 import java.util.Date;

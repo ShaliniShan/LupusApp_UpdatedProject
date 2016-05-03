@@ -1,11 +1,11 @@
 package com.umb.cs682.projectlupus.domain;
 
-import java.util.List;
-
 import com.umb.cs682.projectlupus.db.dao.MoodLevelDao;
 import com.umb.cs682.projectlupus.db.dao.ReminderDao;
 import com.umb.cs682.projectlupus.db.helpers.DaoSession;
-import de.greenrobot.dao.AbstractDao;
+
+import java.util.List;
+
 import de.greenrobot.dao.DaoException;
 
 

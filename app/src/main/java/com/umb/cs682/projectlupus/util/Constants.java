@@ -1,6 +1,8 @@
 package com.umb.cs682.projectlupus.util;
 
 public final class Constants {
+
+
     private Constants(){}
     //Keys
     public static final String PARENT_ACTIVITY_NAME = "ParentActivityName";
@@ -16,7 +18,9 @@ public final class Constants {
     //Shared Prefs Keys
     public static final String ACTIVITY_SENSE_SETTING = "Activity_Sense_Setting";
     public static final String IS_FIRST_RUN = "Is_First_Run";
+    public static final String DONE_SHARED_DATA = "Is_Data_Shared";
     public static final String SENSITIVITY_VALUE = "Sensitivity_Value";
+    public static final String SHARE_DATA_SETTING = "false" ;
 
     //Reminder Types
     public static final String REMINDER_ID = "Reminder Id";

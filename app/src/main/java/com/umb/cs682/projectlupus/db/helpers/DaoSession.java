@@ -2,24 +2,23 @@ package com.umb.cs682.projectlupus.db.helpers;
 
 import android.database.sqlite.SQLiteDatabase;
 
+import com.umb.cs682.projectlupus.db.dao.ActivitySenseDao;
+import com.umb.cs682.projectlupus.db.dao.MedicineDao;
+import com.umb.cs682.projectlupus.db.dao.MoodLevelDao;
+import com.umb.cs682.projectlupus.db.dao.ProfileDao;
+import com.umb.cs682.projectlupus.db.dao.ReminderDao;
+import com.umb.cs682.projectlupus.domain.ActivitySenseBO;
+import com.umb.cs682.projectlupus.domain.MedicineBO;
+import com.umb.cs682.projectlupus.domain.MoodLevelBO;
+import com.umb.cs682.projectlupus.domain.ProfileBO;
+import com.umb.cs682.projectlupus.domain.ReminderBO;
+
 import java.util.Map;
 
 import de.greenrobot.dao.AbstractDao;
 import de.greenrobot.dao.AbstractDaoSession;
 import de.greenrobot.dao.identityscope.IdentityScopeType;
 import de.greenrobot.dao.internal.DaoConfig;
-
-import com.umb.cs682.projectlupus.domain.ActivitySenseBO;
-import com.umb.cs682.projectlupus.domain.ProfileBO;
-import com.umb.cs682.projectlupus.domain.MoodLevelBO;
-import com.umb.cs682.projectlupus.domain.ReminderBO;
-import com.umb.cs682.projectlupus.domain.MedicineBO;
-
-import com.umb.cs682.projectlupus.db.dao.ActivitySenseDao;
-import com.umb.cs682.projectlupus.db.dao.MedicineDao;
-import com.umb.cs682.projectlupus.db.dao.MoodLevelDao;
-import com.umb.cs682.projectlupus.db.dao.ProfileDao;
-import com.umb.cs682.projectlupus.db.dao.ReminderDao;
 
 
 public class DaoSession extends AbstractDaoSession {

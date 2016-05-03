@@ -4,12 +4,12 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteStatement;
 
+import com.umb.cs682.projectlupus.db.helpers.DaoSession;
+import com.umb.cs682.projectlupus.domain.MedicineBO;
+
 import de.greenrobot.dao.AbstractDao;
 import de.greenrobot.dao.Property;
 import de.greenrobot.dao.internal.DaoConfig;
-
-import com.umb.cs682.projectlupus.domain.MedicineBO;
-import com.umb.cs682.projectlupus.db.helpers.DaoSession;
 
 public class MedicineDao extends AbstractDao<MedicineBO, Long> {
 
@@ -23,7 +23,7 @@ public class MedicineDao extends AbstractDao<MedicineBO, Long> {
         public final static Property Notes = new Property(4, String.class, "notes", false, "NOTES");
         public final static Property MedReminderCount = new Property(5, Integer.class, "medReminderCount", false, "MED_REMINDER_COUNT");
         public final static Property MedTakenCount = new Property(6, Integer.class, "medTakenCount", false, "MED_TAKEN_COUNT");
-    };
+    }
 
     private DaoSession daoSession;
 

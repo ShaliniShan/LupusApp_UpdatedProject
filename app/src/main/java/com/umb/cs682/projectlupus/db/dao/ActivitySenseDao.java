@@ -4,12 +4,12 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteStatement;
 
+import com.umb.cs682.projectlupus.db.helpers.DaoSession;
+import com.umb.cs682.projectlupus.domain.ActivitySenseBO;
+
 import de.greenrobot.dao.AbstractDao;
 import de.greenrobot.dao.Property;
 import de.greenrobot.dao.internal.DaoConfig;
-
-import com.umb.cs682.projectlupus.domain.ActivitySenseBO;
-import com.umb.cs682.projectlupus.db.helpers.DaoSession;
 
 public class ActivitySenseDao extends AbstractDao<ActivitySenseBO, Long> {
 
@@ -19,7 +19,7 @@ public class ActivitySenseDao extends AbstractDao<ActivitySenseBO, Long> {
         public final static Property Id = new Property(0, Long.class, "id", true, "_id");
         public final static Property StepCount = new Property(1, int.class, "stepCount", false, "STEP_COUNT");
         public final static Property Date = new Property(2, java.util.Date.class, "date", false, "DATE");
-    };
+    }
 
 
     public ActivitySenseDao(DaoConfig config) {

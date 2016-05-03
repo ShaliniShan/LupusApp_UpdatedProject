@@ -1,12 +1,12 @@
 package com.jwetherell.pedometer.service;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**

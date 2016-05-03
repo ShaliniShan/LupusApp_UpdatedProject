@@ -1,14 +1,5 @@
 package com.umb.cs682.projectlupus.activities.common;
 
-import com.umb.cs682.projectlupus.R;
-import com.umb.cs682.projectlupus.activities.moodAlert.MoodAlert;
-import com.umb.cs682.projectlupus.config.LupusMate;
-import com.umb.cs682.projectlupus.domain.ProfileBO;
-import com.umb.cs682.projectlupus.service.ProfileService;
-import com.umb.cs682.projectlupus.util.Constants;
-import com.umb.cs682.projectlupus.util.Utils;
-import com.umb.cs682.projectlupus.util.SharedPreferenceManager;
-
 import android.app.ActionBar;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -23,6 +14,15 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+
+import com.umb.cs682.projectlupus.R;
+import com.umb.cs682.projectlupus.activities.moodAlert.MoodAlert;
+import com.umb.cs682.projectlupus.config.LupusMate;
+import com.umb.cs682.projectlupus.domain.ProfileBO;
+import com.umb.cs682.projectlupus.service.ProfileService;
+import com.umb.cs682.projectlupus.util.Constants;
+import com.umb.cs682.projectlupus.util.SharedPreferenceManager;
+import com.umb.cs682.projectlupus.util.Utils;
 
 import java.util.ArrayList;
 import java.util.Arrays;

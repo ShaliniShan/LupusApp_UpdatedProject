@@ -7,9 +7,9 @@ import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+
 import com.umb.cs682.projectlupus.R;
 import com.umb.cs682.projectlupus.activities.common.Welcome;
-import com.umb.cs682.projectlupus.config.LupusMate;
 import com.umb.cs682.projectlupus.util.SharedPreferenceManager;
 
 public class Splash extends Activity {

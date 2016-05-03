@@ -14,7 +14,6 @@ import android.widget.TextView;
 
 import com.umb.cs682.projectlupus.R;
 import com.umb.cs682.projectlupus.config.LupusMate;
-import com.umb.cs682.projectlupus.exceptions.AppException;
 import com.umb.cs682.projectlupus.service.MedicineService;
 import com.umb.cs682.projectlupus.service.ReminderService;
 import com.umb.cs682.projectlupus.util.AlarmUtil;
@@ -61,7 +60,7 @@ public class MedicinePopUp extends Activity {
         ivSnooze = (ImageView) findViewById(R.id.iv_med_snooze);
         ivSkip = (ImageView) findViewById(R.id.iv_med_skip);
 
-        initSnoozeIntervalSpinner();;
+        initSnoozeIntervalSpinner();
 
         onNewIntent(getIntent());
 

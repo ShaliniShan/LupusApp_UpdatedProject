@@ -1,5 +1,17 @@
 package com.umb.cs682.projectlupus.activities.main;
 
+import android.app.ActionBar;
+import android.app.Activity;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.support.v4.widget.DrawerLayout;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.TextView;
+import android.widget.Toast;
+
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.XAxis;
@@ -10,13 +22,14 @@ import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.umb.cs682.projectlupus.R;
+import com.umb.cs682.projectlupus.activities.activitySense.ActivitySense;
 import com.umb.cs682.projectlupus.activities.common.About;
 import com.umb.cs682.projectlupus.activities.common.Profile;
 import com.umb.cs682.projectlupus.activities.common.Settings;
+import com.umb.cs682.projectlupus.activities.common.Share_Data;
 import com.umb.cs682.projectlupus.activities.medicineAlert.MedicineAlert;
 import com.umb.cs682.projectlupus.activities.moodAlert.MoodAlert;
-import com.umb.cs682.projectlupus.activities.activitySense.ActivitySense;
-import com.umb.cs682.projectlupus.config.LupusMate;;
+import com.umb.cs682.projectlupus.config.LupusMate;
 import com.umb.cs682.projectlupus.service.ActivitySenseService;
 import com.umb.cs682.projectlupus.service.MedicineService;
 import com.umb.cs682.projectlupus.service.MoodLevelService;
@@ -24,18 +37,8 @@ import com.umb.cs682.projectlupus.service.ProfileService;
 import com.umb.cs682.projectlupus.util.Constants;
 import com.umb.cs682.projectlupus.util.SharedPreferenceManager;
 
-import android.app.Activity;
-
-import android.app.ActionBar;
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.support.v4.widget.DrawerLayout;
-import android.widget.TextView;
-
-
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.Map;
@@ -65,12 +68,13 @@ public class Home extends Activity implements NavigationDrawerFragment.Navigatio
 
     private Iterator iterator;
     private int xIndex;
-
+    private boolean sentData = false;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.a_home);
         SharedPreferenceManager.setBooleanPref(TAG, Constants.IS_FIRST_RUN, false);
+
         ActionBar mActionBar = getActionBar();
 
         final LupusMate lupusMate = (LupusMate) getApplicationContext();
@@ -101,10 +105,8 @@ public class Home extends Activity implements NavigationDrawerFragment.Navigatio
         initMoodChart();
         initActivityChart();
         initMedicineChart();
+
 	}
-
-
-
     @Override
     protected void onStart() {
         super.onStart();
@@ -120,12 +122,46 @@ public class Home extends Activity implements NavigationDrawerFragment.Navigatio
         restoreActionBar();
 
         loadMoodChart();
+
         loadActivityChart();
+
         loadMedicineChart();
+        timeToShareData();
+         }
+    Toast toast;
+
+    public void displayToast(String message) {
+        if(toast != null)
+            toast.cancel();
+        //Toast.makeText(this, "Its time to send your health information to doctor", Toast.LENGTH_LONG).show();
+        toast = Toast.makeText(this, message, Toast.LENGTH_SHORT);
+        toast.show();
     }
 
 
+    protected void onPause() {
+        if(toast != null)
+            toast.cancel();
+        super.onPause();
+    }
 
+    private void timeToShareData(){
+        Calendar c = Calendar.getInstance();
+        int day = c.get(Calendar.DAY_OF_MONTH);
+
+
+        //SharedPreferences mPrefs = getSharedPreferences()
+        boolean sent_data = SharedPreferenceManager.getBooleanPref(Constants.DONE_SHARED_DATA);
+        Log.d("Printing sh_pref", Boolean.toString(sent_data));
+        if ((day ==1 || day == 2 || day ==3) && (sent_data == false)) {
+            displayToast("Its time to send your health information to doctor");
+            //Toast.makeText(this, "Its time to send your health information to doctor", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(this, Share_Data.class);
+            startActivity(intent);
+            sentData = true;
+            return;
+        }
+    }
     @Override
 	public void onNavigationDrawerItemSelected(int position) {
 
@@ -134,7 +170,9 @@ public class Home extends Activity implements NavigationDrawerFragment.Navigatio
             return;
         }
         Intent intent = new Intent();
+
         switch (position){
+
             case 0:
                 intent = new Intent(this, MoodAlert.class);
                 break;
@@ -153,6 +191,9 @@ public class Home extends Activity implements NavigationDrawerFragment.Navigatio
             case 5:
                 intent = new Intent(this, About.class);
                 break;
+            case 6:
+                intent = new Intent(this, Share_Data.class);
+                break;
         }
         startActivity(intent);
 	}
@@ -166,9 +207,9 @@ public class Home extends Activity implements NavigationDrawerFragment.Navigatio
         }catch(DaoException e){
             username = "";
         }
-        mTitle = "Hi "+ username;
+        mTitle = "Hello "+ username;
 		actionBar.setTitle(mTitle);
-	}
+    }
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -273,7 +314,7 @@ public class Home extends Activity implements NavigationDrawerFragment.Navigatio
 
         while (iterator.hasNext()){
             Map.Entry pair = (Map.Entry) iterator.next();
-            String[] splitStrings = ((Date) pair.getKey()).toString().split(" ");
+            String[] splitStrings = pair.getKey().toString().split(" ");
             timeVsStepCountAL.add(new Entry(((Integer)pair.getValue()).floatValue(),xIndex ++));
             stepXVals.add(splitStrings[0] + " " + splitStrings[1] + " " + splitStrings[2] + " " + splitStrings[splitStrings.length - 1]);
         }
@@ -302,7 +343,7 @@ public class Home extends Activity implements NavigationDrawerFragment.Navigatio
 
         while (iterator.hasNext()){
             Map.Entry pair = (Map.Entry) iterator.next();
-            String[] splitStrings = ((Date) pair.getKey()).toString().split(" ");
+            String[] splitStrings = pair.getKey().toString().split(" ");
             timeVsMoodAL.add(new Entry((Float) pair.getValue(),xIndex ++));
             moodXVals.add(splitStrings[0] + " " + splitStrings[1] + " " + splitStrings[2] + " " + splitStrings[splitStrings.length - 1]);
         }

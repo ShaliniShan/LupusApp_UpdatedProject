@@ -1,18 +1,19 @@
 package com.umb.cs682.projectlupus.db.dao;
 
-import java.util.List;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteStatement;
+
+import com.umb.cs682.projectlupus.db.helpers.DaoSession;
+import com.umb.cs682.projectlupus.domain.MoodLevelBO;
+
+import java.util.List;
 
 import de.greenrobot.dao.AbstractDao;
 import de.greenrobot.dao.Property;
 import de.greenrobot.dao.internal.DaoConfig;
 import de.greenrobot.dao.query.Query;
 import de.greenrobot.dao.query.QueryBuilder;
-
-import com.umb.cs682.projectlupus.domain.MoodLevelBO;
-import com.umb.cs682.projectlupus.db.helpers.DaoSession;
 
 public class MoodLevelDao extends AbstractDao<MoodLevelBO, Long> {
 
@@ -23,7 +24,7 @@ public class MoodLevelDao extends AbstractDao<MoodLevelBO, Long> {
         public final static Property ReminderId = new Property(1, long.class, "reminderId", false, "REMINDER_ID");
         public final static Property Date = new Property(2, java.util.Date.class, "date", false, "DATE");
         public final static Property MoodLevel = new Property(3, int.class, "moodLevel", false, "MOOD_LEVEL");
-    };
+    }
 
     private Query<MoodLevelBO> reminder_MoodRemindersQuery;
 

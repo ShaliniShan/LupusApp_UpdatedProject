@@ -9,6 +9,14 @@
         <item>Over 60</item>
     </string-array>
 
+    <string-array name="arr_freq">
+        <item>Weekly</item>
+        <item>Monthly</item>
+        <item>Quaterly</item>
+        <item>Half-Yearly</item>
+        <item>Yearly</item>
+    </string-array>
+
     <string-array name="arr_gender">
         <item>select your gender</item>
         <item>Male</item>
@@ -51,6 +59,7 @@
         <item>Edit Profile</item>
         <item>Settings</item>
         <item>About</item>
+        <item>Share Data</item>
     </string-array>
 
     <string-array name="arr_snooze_interval">

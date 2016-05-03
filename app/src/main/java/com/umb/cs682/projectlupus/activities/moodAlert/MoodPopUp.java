@@ -3,7 +3,6 @@ package com.umb.cs682.projectlupus.activities.moodAlert;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -14,7 +13,6 @@ import android.widget.Spinner;
 
 import com.umb.cs682.projectlupus.R;
 import com.umb.cs682.projectlupus.config.LupusMate;
-import com.umb.cs682.projectlupus.exceptions.AppException;
 import com.umb.cs682.projectlupus.service.MoodLevelService;
 import com.umb.cs682.projectlupus.service.ReminderService;
 import com.umb.cs682.projectlupus.util.AlarmUtil;

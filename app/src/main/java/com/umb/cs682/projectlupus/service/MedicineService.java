@@ -15,7 +15,6 @@ import java.util.TreeMap;
 
 import de.greenrobot.dao.DaoException;
 import de.greenrobot.dao.query.CountQuery;
-import de.greenrobot.dao.query.DeleteQuery;
 import de.greenrobot.dao.query.Query;
 
 public class MedicineService {

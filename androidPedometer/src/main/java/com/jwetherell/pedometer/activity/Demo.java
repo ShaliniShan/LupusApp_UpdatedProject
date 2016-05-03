@@ -1,14 +1,5 @@
 package com.jwetherell.pedometer.activity;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.logging.Logger;
-import com.jwetherell.pedometer.service.IStepService;
-import com.jwetherell.pedometer.service.IStepServiceCallback;
-import com.jwetherell.pedometer.service.StepDetector;
-import com.jwetherell.pedometer.service.StepService;
-import com.jwetherell.pedometer.utilities.MessageUtilities;
-import com.jwetherell.pedometer.R;
 import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Context;
@@ -26,13 +17,24 @@ import android.os.RemoteException;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.ToggleButton;
-import android.widget.AdapterView.OnItemSelectedListener;
-import android.widget.CompoundButton.OnCheckedChangeListener;
+
+import com.jwetherell.pedometer.R;
+import com.jwetherell.pedometer.service.IStepService;
+import com.jwetherell.pedometer.service.IStepServiceCallback;
+import com.jwetherell.pedometer.service.StepDetector;
+import com.jwetherell.pedometer.service.StepService;
+import com.jwetherell.pedometer.utilities.MessageUtilities;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.logging.Logger;
 
 
 /**

@@ -1,16 +1,5 @@
 package com.umb.cs682.projectlupus.activities.medicineAlert;
 
-import com.umb.cs682.projectlupus.R;
-import com.umb.cs682.projectlupus.config.LupusMate;
-import com.umb.cs682.projectlupus.domain.MedicineBO;
-import com.umb.cs682.projectlupus.domain.ReminderBO;
-import com.umb.cs682.projectlupus.service.MedicineService;
-import com.umb.cs682.projectlupus.service.ReminderService;
-import com.umb.cs682.projectlupus.util.AlarmUtil;
-import com.umb.cs682.projectlupus.util.Constants;
-import com.umb.cs682.projectlupus.util.DateTimeUtil;
-import com.umb.cs682.projectlupus.util.Utils;
-
 import android.app.ActionBar;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -37,6 +26,17 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
+
+import com.umb.cs682.projectlupus.R;
+import com.umb.cs682.projectlupus.config.LupusMate;
+import com.umb.cs682.projectlupus.domain.MedicineBO;
+import com.umb.cs682.projectlupus.domain.ReminderBO;
+import com.umb.cs682.projectlupus.service.MedicineService;
+import com.umb.cs682.projectlupus.service.ReminderService;
+import com.umb.cs682.projectlupus.util.AlarmUtil;
+import com.umb.cs682.projectlupus.util.Constants;
+import com.umb.cs682.projectlupus.util.DateTimeUtil;
+import com.umb.cs682.projectlupus.util.Utils;
 
 import java.util.ArrayList;
 import java.util.Calendar;

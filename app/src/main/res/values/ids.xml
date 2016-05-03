@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="share_text" type="id">Do you like to share your health information with your
+        doctor?It is recommended to share the data atleast once a month preferrably before the
+        appointment.
+    </item>
+    <item name="Spinner" type="id" />
+</resources>

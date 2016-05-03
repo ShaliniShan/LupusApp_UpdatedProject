@@ -4,12 +4,12 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteStatement;
 
+import com.umb.cs682.projectlupus.db.helpers.DaoSession;
+import com.umb.cs682.projectlupus.domain.ProfileBO;
+
 import de.greenrobot.dao.AbstractDao;
 import de.greenrobot.dao.Property;
 import de.greenrobot.dao.internal.DaoConfig;
-
-import com.umb.cs682.projectlupus.domain.ProfileBO;
-import com.umb.cs682.projectlupus.db.helpers.DaoSession;
 
 public class ProfileDao extends AbstractDao<ProfileBO, Long> {
 
@@ -22,7 +22,7 @@ public class ProfileDao extends AbstractDao<ProfileBO, Long> {
         public final static Property Age = new Property(2, String.class, "age", false, "AGE"); //NK
         public final static Property Gender = new Property(3, String.class, "gender", false, "GENDER");
         public final static Property Ethnicity = new Property(4, String.class, "ethnicity", false, "ETHNICITY");
-    };
+    }
 
 
     public ProfileDao(DaoConfig config) {

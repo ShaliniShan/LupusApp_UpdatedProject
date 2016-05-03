@@ -5,14 +5,15 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
-import de.greenrobot.dao.AbstractDaoMaster;
-import de.greenrobot.dao.identityscope.IdentityScopeType;
 
 import com.umb.cs682.projectlupus.db.dao.ActivitySenseDao;
 import com.umb.cs682.projectlupus.db.dao.MedicineDao;
 import com.umb.cs682.projectlupus.db.dao.MoodLevelDao;
 import com.umb.cs682.projectlupus.db.dao.ProfileDao;
 import com.umb.cs682.projectlupus.db.dao.ReminderDao;
+
+import de.greenrobot.dao.AbstractDaoMaster;
+import de.greenrobot.dao.identityscope.IdentityScopeType;
 
 public class DaoMaster extends AbstractDaoMaster {
     public static final int SCHEMA_VERSION = 4;
