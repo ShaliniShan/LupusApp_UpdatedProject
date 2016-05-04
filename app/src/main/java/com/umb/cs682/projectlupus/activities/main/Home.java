@@ -133,11 +133,9 @@ public class Home extends Activity implements NavigationDrawerFragment.Navigatio
     public void displayToast(String message) {
         if(toast != null)
             toast.cancel();
-        //Toast.makeText(this, "Its time to send your health information to doctor", Toast.LENGTH_LONG).show();
         toast = Toast.makeText(this, message, Toast.LENGTH_SHORT);
         toast.show();
     }
-
 
     protected void onPause() {
         if(toast != null)
@@ -148,14 +146,10 @@ public class Home extends Activity implements NavigationDrawerFragment.Navigatio
     private void timeToShareData(){
         Calendar c = Calendar.getInstance();
         int day = c.get(Calendar.DAY_OF_MONTH);
-
-
-        //SharedPreferences mPrefs = getSharedPreferences()
         boolean sent_data = SharedPreferenceManager.getBooleanPref(Constants.DONE_SHARED_DATA);
         Log.d("Printing sh_pref", Boolean.toString(sent_data));
         if ((day ==1 || day == 2 || day ==3) && (sent_data == false)) {
             displayToast("Its time to send your health information to doctor");
-            //Toast.makeText(this, "Its time to send your health information to doctor", Toast.LENGTH_LONG).show();
             Intent intent = new Intent(this, Share_Data.class);
             startActivity(intent);
             sentData = true;
@@ -214,9 +208,6 @@ public class Home extends Activity implements NavigationDrawerFragment.Navigatio
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		if (!mNavigationDrawerFragment.isDrawerOpen()) {
-			// Only show items in the action bar relevant to this screen
-			// if the drawer is not showing. Otherwise, let the drawer
-			// decide what to show in the action bar.
 			getMenuInflater().inflate(R.menu.m_action_empty, menu);
 			restoreActionBar();
 			return true;
@@ -290,8 +281,6 @@ public class Home extends Activity implements NavigationDrawerFragment.Navigatio
             mednameVsTakenPercentageAL.add(new BarEntry((Float) pair.getValue(),xIndex ++));
             medicineXVals.add(pair.getKey().toString());
         }
-
-
 
         if(mednameVsTakenPercentageAL.size() > 0) {
             BarDataSet mednameVsTakenPercentageDataset = new BarDataSet(mednameVsTakenPercentageAL, null);

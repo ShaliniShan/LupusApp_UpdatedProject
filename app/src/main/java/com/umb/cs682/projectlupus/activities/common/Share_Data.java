@@ -62,7 +62,6 @@ import de.greenrobot.dao.DaoException;
 public class Share_Data extends Activity implements View.OnClickListener {
     private static final String TAG = ".activities.sharedata";
     private static final String SAMPLE_DB_NAME = "LupusMateDb";
-    //private static final String SAMPLE_TABLE_NAME = "Info";
     TextView t3;
     private String user = "shalini";
     private String pass = "fl!wer123";
@@ -135,7 +134,6 @@ public class Share_Data extends Activity implements View.OnClickListener {
             Log.d("Backup:", data.getAbsolutePath());
             String state = Environment.getExternalStorageState();
             File backupDBDir = new File(Environment.getExternalStorageDirectory().toString() + "/LupusMate_Data");
-            //File currentDB = new File(currentDBPath);
 
             if (Environment.MEDIA_MOUNTED.equals(state)) {
                 Log.d("Backup:", "Ext storage is mounted");
@@ -160,7 +158,6 @@ public class Share_Data extends Activity implements View.OnClickListener {
 
                     File backupDBFile = new File(backupDBDir, "/LupusMateBackup");
 
-                    // LupusMateBackup = new SimpleDateFormat("yyyyMMddhhmm'.txt'").format(new Date());
                     if (currentDB.exists()) {
                         FileChannel src = new FileInputStream(currentDB).getChannel();
                         FileChannel dst = new FileOutputStream(backupDBFile).getChannel();
@@ -179,7 +176,7 @@ public class Share_Data extends Activity implements View.OnClickListener {
                                 return null;
                             }
 
-                        }.execute();//fileSftp();
+                        }.execute();
                         Toast.makeText(this, "Dr Ramon is now sharing your health information!", Toast.LENGTH_LONG).show();
 
                         Log.d("Setting sh_pref", "true");
@@ -215,9 +212,7 @@ public class Share_Data extends Activity implements View.OnClickListener {
 
             ChannelSftp sftp = (ChannelSftp) channel;
 
-            // use the put method , if you are using android remember to remove "file://" and use only the relative path
             sftp.put("/storage/emulated/0/LupusMate_Data/LupusMateBackup", "/home/shalini/Documents");
-          //  sftp.cd("/home/shalini/Documents");
             String LmbName = null;
            try {
                username = profileService.getProfileData().getUserName();
@@ -225,16 +220,8 @@ public class Share_Data extends Activity implements View.OnClickListener {
                username = "";
            }
            sdTitle = username;
-          // actionBar.setTitle(sdTitle);
-        /*    Long tsLong = System.currentTimeMillis()*1000L;
-            String ts = tsLong.toString();
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm");
-            Calendar cal = Calendar.getInstance();
-            cal.setTimeInMillis(tsLong);
-            String stime = sdf.format(cal.getTime());
-            */
+
            Long tsLong = System.currentTimeMillis()/1000;
-           //String ts = tsLong.toString();
            String sTime =  getDateCurrentTimeZone(tsLong);
             LmbName ="/home/shalini/Documents/LupusMateBackup " + sdTitle  + sTime;
             sftp.rename("/home/shalini/Documents/LupusMateBackup",LmbName);
